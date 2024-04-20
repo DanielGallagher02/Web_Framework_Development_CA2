@@ -1,0 +1,38 @@
+<!-- Responsive navigation bar that adapts to different screen sizes -->
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <!-- Navigation links -->
+    <ul class="navbar-nav">
+      <!-- Standard navigation links available to all users -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/routes">Routes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/teams">Teams</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/players">Players</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/results">Results</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/tables">Tables</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/stats">Stats</a>
+      </li>
+      <!-- Conditionally rendered links based on authentication status -->
+      <li class="nav-item" *ngIf="authService.isLoggedIn$() | async">
+        <a class="nav-link" routerLink="/admin">Admin</a> <!-- Only visible for logged-in users -->
+      </li>
+      <li class="nav-item" *ngIf="!(authService.isLoggedIn$() | async)">
+        <a class="nav-link" routerLink="/login">Login</a> <!-- Visible for all users -->
+      </li>
+      <li class="nav-item" *ngIf="authService.isLoggedIn$() | async">
+        <a class="nav-link" (click)="authService.logout()" routerLink="/login">Logout</a> <!-- Logout functionality for logged-in users -->
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+.container {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.table td img {
+    margin-right: 10px;
+}

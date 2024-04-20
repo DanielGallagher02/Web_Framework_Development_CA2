@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <h2>Routes</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Route</th>
+                <th>Description</th>
+                <th>URL</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/teams</td>
+                <td>GET teams</td>
+                <td><a href="http://localhost:3000/teams" target="_blank">http://localhost:3000/teams</a></td>
+                <td><button class="btn btn-primary" (click)="getData('http://localhost:3000/teams')">GET</button></td>
+            </tr>
+            <tr>
+                <td>/players</td>
+                <td>GET players</td>
+                <td><a href="http://localhost:3000/players" target="_blank">http://localhost:3000/players</a></td>
+                <td><button class="btn btn-primary" (click)="getData('http://localhost:3000/players')">GET</button></td>
+            </tr>
+            <tr>
+                <td>/results</td>
+                <td>GET Results</td>
+                <td><a href="http://localhost:3000/results" target="_blank">http://localhost:3000/results</a></td>
+                <td><button class="btn btn-primary" (click)="getData('http://localhost:3000/results')">GET</button></td>
+            </tr>
+            <tr>
+                <td>/results/1</td>
+                <td>GET Results by Round</td>
+                <td><a href="http://localhost:3000/results/1" target="_blank">http://localhost:3000/results/1</a></td>
+                <td><button class="btn btn-primary" (click)="getData('http://localhost:3000/results/1')">GET</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="json-box mt-4">
+        <h3>JSON data</h3>
+        <pre class="json-data">{{ jsonData | json }}</pre>
+    </div>
+</div>

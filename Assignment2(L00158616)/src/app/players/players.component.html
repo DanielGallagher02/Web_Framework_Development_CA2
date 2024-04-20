@@ -1,0 +1,62 @@
+<!-- players.component.html -->
+<div class="container mt-4">
+    <h2>Players</h2>
+     <!-- Dropdown to select teams for filtering players -->
+    <div class="dropdown mt-4 mb-4">
+        <select class="form-select" aria-label="Select Players" 
+                (change)="onTeamSelect($event)">
+          <option value="all" selected>All</option>
+          <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+        </select>
+    </div>
+     <!-- Responsive table to display filtered players -->
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Matches</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through each filtered player and display in a row -->
+                <tr *ngFor="let player of filteredPlayers">
+                    <td>
+                         <!-- Displaying team logo if available -->
+                        <img *ngIf="player.team?.logo" [src]="player.team?.logo" [alt]="player.team?.name" style="width: 30px; height: 30px; margin-right: 5px;">
+                        {{ player.team?.name }}
+                    </td>
+                    <td>{{ player.name }} (#{{ player.squadNumber }})</td>
+                    <td>{{ player.age }}</td>
+                    <td>{{ player.matches }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Matches</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let player of players">
+                    <td><img [src]="player.teamLogo" alt="{{ player.team }} logo" width="30"> {{ player.team }}</td>
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.age }}</td>
+                    <td>{{ player.matches }}</td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</div> -->
+

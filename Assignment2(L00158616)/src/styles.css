@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "bootstrap/dist/css/bootstrap.css"; 
+
+body {
+    padding: 0px;
+}
+
+.json-box pre {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+
+}
+
+.json-box, .json-data {
+    height: 300px;
+}
+
+footer {
+    background-color: white; /* Change background to white */
+    color: black; /* Adjust text color for visibility */
+    padding: 10px 20px;
+    text-align: center; /* Center the text content */
+  }

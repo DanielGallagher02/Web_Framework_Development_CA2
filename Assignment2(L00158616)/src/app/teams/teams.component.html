@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <h2>Teams</h2>
+  <!-- Table to display team information -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterating over teams to display each team's data -->
+      @for (team of teams; track team.id) {
+        <tr>
+          <td>
+            <!-- Display team logo and name with abbreviation -->
+            <img [src]="team.logo" [alt]="team.name" width="30">
+            {{ team.name }} ({{ team.abbreviation }})
+          </td>
+          <td>
+            <!-- Link to more information about the team -->
+            <a href="https://en.wikipedia.org/wiki/{{ team.name }}_GAA" target="_blank">Info...</a>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <!-- Fallback text if no teams are available -->
+          <td colspan="2">No teams available.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
